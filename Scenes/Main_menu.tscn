@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckyxy8gpkywx0"]
+
+[ext_resource type="FontFile" uid="uid://cpbjwgamtjbf3" path="res://Fonts/GrapeSoda.ttf" id="1_7sp8y"]
+[ext_resource type="Script" uid="uid://cwjb5qgtusbwb" path="res://Scenes/main_menu.gd" id="1_pc006"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pc006"]
+bg_color = Color(0.415686, 0.666667, 0.470588, 0.992157)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7sp8y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7j37"]
+bg_color = Color(0.677567, 0.677567, 0.677567, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_787fc"]
+bg_color = Color(0.507972, 0.507972, 0.507972, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5e4v"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pc006")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pc006")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -194.0
+offset_right = 174.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("1_7sp8y")
+theme_override_font_sizes/font_size = 90
+text = "MiniJameGam 2025"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -45.5
+offset_right = 174.0
+offset_bottom = 123.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 13
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7sp8y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f7j37")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_787fc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h5e4v")
+text = "START"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7sp8y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f7j37")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_787fc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h5e4v")
+text = "CREDITS"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_credits_pressed"]

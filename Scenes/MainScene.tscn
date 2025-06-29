@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://rfffwpm5ahqi"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cihdc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = SubResource("CanvasTexture_cihdc")
